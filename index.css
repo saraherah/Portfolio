@@ -50,7 +50,7 @@ section {
   align-items: center;
   position: absolute;
   flex-direction: column;
-  bottom: 160px;
+  bottom: 170px;
 }
 .a__btn {
   border: 1px solid black;

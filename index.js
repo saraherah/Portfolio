@@ -7,7 +7,13 @@ function closeMenu() {
 
 function openMenu() {
   $(".toggler").click(() => {
-    $(".menu").css("visibility", "visible");
+    let atLeastOneIsChecked = $("#menu__toggler:checkbox:checked").length > 0;
+
+    if (atLeastOneIsChecked) {
+      $(".menu").css("visibility", "visible");
+    } else {
+      $(".menu").css("visibility", "hidden");
+    }
   });
 }
 
@@ -35,20 +41,10 @@ function closeProject() {
   });
 }
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("scale-up-center");
-    }
-  });
-});
-
-observer.observe(document.querySelector("#react__icon"));
-
 function main() {
   closeMenu();
   openMenu();
   openProject();
-  closeProject()
+  closeProject();
 }
 main();
