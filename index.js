@@ -11,6 +11,30 @@ function openMenu() {
   });
 }
 
+function openProject() {
+  $("#image__one").click(() => {
+    $("#project__one").css("display", "flex");
+  });
+  $("#image__two").click(() => {
+    $("#project__two").css("display", "flex");
+  });
+  $("#image__three").click(() => {
+    $("#project__three").css("display", "flex");
+  });
+}
+
+function closeProject() {
+  $("#close__one").click(() => {
+    $("#project__one").css("display", "none");
+  });
+  $("#close__two").click(() => {
+    $("#project__two").css("display", "none");
+  });
+  $("#close__three").click(() => {
+    $("#project__three").css("display", "none");
+  });
+}
+
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
@@ -24,5 +48,7 @@ observer.observe(document.querySelector("#react__icon"));
 function main() {
   closeMenu();
   openMenu();
+  openProject();
+  closeProject()
 }
 main();
